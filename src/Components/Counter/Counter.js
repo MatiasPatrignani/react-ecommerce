@@ -8,6 +8,7 @@ const addItem = (product) => {
             product.quantity = product.quantity + 1
         }
     })
+    console.log(product);
     setItems(CartProduct)
 }
 
