@@ -1,9 +1,9 @@
 import "../Main/Main.css"
 import ProductContainer from "../ProductContainer/ProductContainer"
 
-const Main = ({addProduct}) => {
+const Main = ({addProduct, addWishList}) => {
   return (
-    <ProductContainer addProduct={addProduct} />
+    <ProductContainer addProduct={addProduct} addWishList={addWishList}/>
   )
 }
 

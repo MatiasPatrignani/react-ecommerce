@@ -122,8 +122,8 @@ const Footer = () => {
 
   {/* <!-- Copyright --> */}
   <div className="CopyRight text-center p-4" >
-    © 2021 Copyright:
-    <a className="text-reset fw-bold" href="#!">MDBootstrap.com</a>
+    © 2022 Copyright
+    <a className="text-reset fw-bold" href="#!"></a>
   </div>
   {/* <!-- Copyright --> */}
 </footer>

@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+}
+
+.NavLink{
+    display: flex;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.listNav{
+    color: black;
+    padding: 1rem;
+}
+
+li{
+    position:relative;
+}

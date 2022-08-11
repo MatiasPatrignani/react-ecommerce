@@ -1,0 +1,7 @@
+.container_img{
+    background-image: url(../../../public/img/img_login1.jpg);
+    height: 40rem;
+    width: 100%;
+    opacity: 80%;
+    border: none !important;
+}

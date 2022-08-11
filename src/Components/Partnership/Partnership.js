@@ -1,8 +1,12 @@
 import React from 'react'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 
 const Partnership = () => {
   return (
-    <div>Partnership</div>
+    <>
+    <h1>Partnership</h1>
+    </>
   )
 }
 

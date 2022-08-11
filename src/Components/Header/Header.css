@@ -3,7 +3,10 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    margin-bottom: 1rem;
-    background-color: rgb(241, 240, 240);
+    /* background-color: rgb(241, 240, 240); */
     color:black;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    transition: 0.6s;
 }

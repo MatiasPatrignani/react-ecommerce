@@ -1,0 +1,54 @@
+.wrapper{
+    padding-top:3.2rem;
+    padding-bottom:2.2rem;
+    background:rgba(0, 0, 0, 0.76);
+    }
+
+a{
+text-decoration:none !important;
+}
+
+input{
+    opacity: 75%;
+}
+
+label{
+    font-weight: 500;
+}
+
+.myform{
+position: relative;
+display: -ms-flexbox;
+display: flex;
+padding: 1rem;
+-ms-flex-direction: column;
+flex-direction: column;
+width: 100%;
+background-image: url('../../../public/img/img_login1.jpg');
+pointer-events: auto;
+background-clip: padding-box;
+border: 1px solid rgba(0,0,0,.2);
+border-radius: 1.1rem;
+outline: 0;
+max-width: 100%;
+height: 68vh;
+opacity: 85%;
+}
+
+.tx-tfm{
+text-transform:uppercase;
+}
+
+
+.login-or {
+position: relative;
+color: #aaa;
+margin-top: 10px;
+margin-bottom: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+form .error {
+color: #ff0000;
+}

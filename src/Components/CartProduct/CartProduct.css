@@ -1,0 +1,9 @@
+.imgCard{
+    height: 10rem;
+    margin-top: 2rem;
+    border: none;
+}
+
+.ContainterCard{
+    border: none !important;
+}

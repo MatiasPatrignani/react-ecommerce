@@ -1,12 +1,13 @@
 import "../Aside/Aside.css"
 import { Carousel } from "react-bootstrap"
+import '../Aside/Aside.css'
 
 const Aside = () => {
   return (
     <Carousel>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img_carousel"
           src="../img/img_carousel1.jpg"
           alt="First slide"
         />
@@ -17,7 +18,7 @@ const Aside = () => {
       </Carousel.Item>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img_carousel"
           src="../img/img_carousel2.jpg"
           alt="Second slide"
         />
@@ -28,7 +29,7 @@ const Aside = () => {
       </Carousel.Item>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img_carousel"
           src="../img/img_carousel3.jpg"
           alt="Second slide"
         />

@@ -1,3 +1,4 @@
+import "../Counter/Counter.css";
 import React from 'react'
 
 const Counter = ({myCart, product, setItems}) => {
@@ -25,9 +26,9 @@ const substract = (product) => {
 }
   return (
     <>
-    <button className='btn btn-primary' onClick={ () => substract(product)}>-</button>
-    <p>{product.quantity}</p>
-    <button className='btn btn-primary' onClick={ () => addItem(product)}>+</button>
+    <button className='btn btn-primary' onClick={ () => substract(product)}>➖</button>
+    <p className='m-2'>{product.quantity}</p>
+    <button className='btn btn-primary' onClick={ () => addItem(product)}>➕</button>
     </>
   )
 }
