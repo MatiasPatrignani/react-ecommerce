@@ -5,7 +5,9 @@ import Footer from '../Footer/Footer'
 const Shops = (myCart, RemoveItem, setItems) => {
   return (
     <>
-      <h1>Shops</h1>
+      <div className='mt-5 pt-5 mb-5 pb-5'>
+        <h1>Shops</h1>
+      </div>
     </>
   )
 }

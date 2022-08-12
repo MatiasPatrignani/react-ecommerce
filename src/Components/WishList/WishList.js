@@ -19,7 +19,6 @@ const WishList = ({myList, addWishList, setProduct, RemoveProduct, addProduct}) 
           Wish List 🧡
         </Button>
 
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>My Wish List</Modal.Title>

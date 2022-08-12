@@ -3,10 +3,24 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    /* background-color: rgb(241, 240, 240); */
+    background-color: rgb(241, 240, 240);
     color:black;
-    background-color: transparent;
+    /* background-color: transparent; */
     top: 0;
     left: 0;
     transition: 0.6s;
+    /* position: fixed; */
+    z-index: 1;
+}
+
+.logo{
+    position: relative;
+    transition: 0.6s;
+}
+
+.modals{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

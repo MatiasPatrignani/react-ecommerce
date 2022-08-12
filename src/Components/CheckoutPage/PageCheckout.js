@@ -1,33 +1,42 @@
-import React, { useState } from 'react'
-import Payment from '../Payment/Payment'
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
-import Shipping from '../Shipping/Shipping';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import Payment from "../Payment/Payment";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Row from "react-bootstrap/Row";
+import Shipping from "../Shipping/Shipping";
+import { useNavigate } from "react-router-dom";
+import { ShoppingContext } from "../../context/ShoppingProvider";
 
-const PageCheckout = ({RemoveItem}) => {
-    const [validated, setValidated] = useState(false);
+const PageCheckout = () => {
+  const [validated, setValidated] = useState(false);
+  const { paymentInfo, setPaymentInfo } = useContext(ShoppingContext);
 
-    const navigate = useNavigate()
-    const ShowHomePage = useNavigate();
-    const handleClickHomePage = () => {
-        ShowHomePage("/")
-      }
+  const navigate = useNavigate();
+  const ShowHomePage = useNavigate();
+  const handleClickHomePage = () => {
+    ShowHomePage("/");
+  };
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    console.log(form);
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-      console.log("no validated")
+      console.log("no validated");
+      // setPaymentInfo()
     } else {
-        navigate('/payment')
+      navigate("/payment");
     }
     setValidated(true);
+  };
 
+  const handleChange = (e) => {
+    setPaymentInfo((paymentInfo) => {
+      return { ...paymentInfo, [e.target.name]: e.target.value };
+    });
   };
 
   return (
@@ -39,8 +48,13 @@ const PageCheckout = ({RemoveItem}) => {
             required
             type="text"
             placeholder="First name"
-            defaultValue="Miguel"
+            defaultValue={paymentInfo?.firstName}
+            onChange={handleChange}
+            name="firstName"
           />
+          <Form.Control.Feedback type="invalid">
+              Please choose a first name.
+            </Form.Control.Feedback>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
@@ -49,44 +63,86 @@ const PageCheckout = ({RemoveItem}) => {
             required
             type="text"
             placeholder="Last name"
-            defaultValue="Duminguesh"
+            defaultValue={paymentInfo?.lastName}
+            onChange={handleChange}
+            name="lastName"
           />
+          <Form.Control.Feedback type="invalid">
+              Please choose a last name.
+            </Form.Control.Feedback>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
+          <Form.Label>Email</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
             <Form.Control
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               aria-describedby="inputGroupPrepend"
               required
+              onChange={handleChange}
+              defaultValue={paymentInfo?.userName}
+              name="userName"
             />
             <Form.Control.Feedback type="invalid">
-              Please choose a username.
+              Please choose a email.
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
+        <Form.Group as={Col} md="3" controlId="validationCustom03">
+          <Form.Label>Country</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Country"
+            required
+            onChange={handleChange}
+            name="Counrty"
+            defaultValue={paymentInfo?.country}
+          />
+          <Form.Control.Feedback type="invalid">
+            Please provide a valid country.
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="3" controlId="validationCustom03">
           <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" required />
+          <Form.Control
+            type="text"
+            placeholder="City"
+            required
+            onChange={handleChange}
+            name="city"
+            defaultValue={paymentInfo?.city}
+          />
           <Form.Control.Feedback type="invalid">
             Please provide a valid city.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom04">
           <Form.Label>State</Form.Label>
-          <Form.Control type="text" placeholder="State" required />
+          <Form.Control
+            type="text"
+            placeholder="State"
+            required
+            onChange={handleChange}
+            name="state"
+            defaultValue={paymentInfo?.state}
+          />
           <Form.Control.Feedback type="invalid">
             Please provide a valid state.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="3" controlId="validationCustom05">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control type="text" placeholder="Zip" required />
+          <Form.Label>Postal Code</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Postal Code"
+            required
+            onChange={handleChange}
+            name="zip"
+            defaultValue={paymentInfo?.zip}
+          />
           <Form.Control.Feedback type="invalid">
             Please provide a valid zip.
           </Form.Control.Feedback>
@@ -99,14 +155,16 @@ const PageCheckout = ({RemoveItem}) => {
           feedback="You must agree before submitting."
           feedbackType="invalid"
         />
-        <Shipping/>
+        <Shipping />
       </Form.Group>
-      <div className='d-flex justify-content-around mt-4 mb-5'>
-      <Button variant='dark' onClick={handleClickHomePage}>BACK</Button>
-      <Button type="submit" >CONTINUE</Button>
+      <div className="d-flex justify-content-around mt-4 mb-5">
+        <Button variant="dark" onClick={handleClickHomePage}>
+          BACK
+        </Button>
+        <Button type="submit">CONTINUE</Button>
       </div>
     </Form>
   );
-}
+};
 
-export default PageCheckout
+export default PageCheckout;

@@ -37,7 +37,7 @@ const Payment = ({RemoveItem, setItems}) => {
   };
 
   return (
-    <div className="">
+    <div className="pt-5">
       <section className="h-100 h-custom" >
         <div className="container h-100 py-5">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -67,7 +67,7 @@ const Payment = ({RemoveItem, setItems}) => {
 
                       <div className="d-flex justify-content-between px-x">
                         <p className="fw-bold">Shipping:</p>
-                        <p className="fw-bold">0$</p>
+                        <p className="fw-bold">0 €</p>
                       </div>
                       <div
                         className="d-flex justify-content-between p-2 mb-2"
@@ -179,7 +179,7 @@ const Payment = ({RemoveItem, setItems}) => {
                           className="fw-bold mb-5"
                           style={{ position: "absolute", bottom: "0" }}
                         >
-                          <a href="/home">
+                          <a href="/">
                             <i className="fas fa-angle-left me-2"></i>Back to
                             shopping
                           </a>

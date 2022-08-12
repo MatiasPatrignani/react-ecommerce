@@ -15,8 +15,8 @@ const CheckoutPage = ({RemoveItem}) => {
 
   return (
     <>
-      <div className="m-5">
-        <PageCheckout clickEvent={clickEvent} RemoveItem={RemoveItem}/>
+      <div className="m-5 pt-4">
+          <PageCheckout clickEvent={clickEvent} RemoveItem={RemoveItem}/>
       </div>
     </>
   );

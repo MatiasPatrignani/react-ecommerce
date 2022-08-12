@@ -1,27 +1,77 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
+import { ShoppingContext } from "../../context/ShoppingProvider";
 import Login from '../../Data/Login.json'
 import LoginSuccessful from "../LoginSuccessful/LoginSuccessful";
+import toast, { Toaster } from 'react-hot-toast';
 
 const LoginModal = ({setLgShow}) => {
   // const [userState, setUserState] = useState({email: "", password: ""});
   let nameRef =  useRef();
   let passwordRef =  useRef();
-
+  
   const [error, setError ] = useState("")
+  const {setIsLoggedIn} = useContext(ShoppingContext)
+  
   const handleLogin = (event) =>{
     event.preventDefault();
 
     const inputName = nameRef.current.value;
     const inputPassword = passwordRef.current.value;
     const test = Login.find((users) => inputName === users.email && inputPassword === users.password)
-  
    if(test){
+    setIsLoggedIn(true)
     setLgShow(false)
-    return 
+    toast('You are logged in!', {
+      duration: 4000,
+      position: 'bottom-left',
+    
+      // Styling
+      style: {},
+      className: '',
+    
+      // Custom Icon
+      icon: '✅',
+    
+      // Change colors of success/error/loading icon
+      iconTheme: {
+        primary: '#000',
+        secondary: '#fff',
+      },
+    
+      // Aria
+      ariaProps: {
+        role: 'status',
+        'aria-live': 'polite',
+      },
+    });
+    return
    }
    else{
     setError("Email or Password is incorrect!")
     console.log("USER INCORRECT");
+    toast('User Name or Password Incorrecto!', {
+      duration: 4000,
+      position: 'bottom-left',
+    
+      // Styling
+      style: {},
+      className: '',
+    
+      // Custom Icon
+      icon: '❌',
+    
+      // Change colors of success/error/loading icon
+      iconTheme: {
+        primary: '#000',
+        secondary: '#fff',
+      },
+    
+      // Aria
+      ariaProps: {
+        role: 'status',
+        'aria-live': 'polite',
+      },
+    });
    }
   }
 
@@ -59,6 +109,7 @@ const LoginModal = ({setLgShow}) => {
           </div>
         </div>
       </div>
+      
       </>
   )
 }

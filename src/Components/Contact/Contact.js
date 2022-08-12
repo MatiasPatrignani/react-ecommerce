@@ -5,9 +5,9 @@ import Header from '../Header/Header'
 const Contact = () => {
   return (
     <>
-
-    <h1>Contact</h1>
-
+      <div className='mt-5 pt-5 mb-5 pb-5' >
+        <h1>Contact</h1>
+      </div>
     </>
   )
 }

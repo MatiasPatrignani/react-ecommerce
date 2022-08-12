@@ -2,7 +2,6 @@ import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import CartList from "../CartList/CartList";
 import CounterValue from "../CounterValue/CounterValue";
-import LoginPage from "../LoginPage/LoginPage";
 import { useNavigate } from "react-router-dom";
 
 const CartModal = ({ myCart, RemoveItem, setItems }) => {
@@ -12,6 +11,13 @@ const CartModal = ({ myCart, RemoveItem, setItems }) => {
 
   const showLoginPage = useNavigate();
 
+  const handleBuyNow = () => {
+    // event.preventDefault();
+    if(true){
+      handleClose()
+      showLoginPage("/checkout")
+    }
+  }
 
   return (
     <>
@@ -34,7 +40,7 @@ const CartModal = ({ myCart, RemoveItem, setItems }) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => showLoginPage("/checkout") }>
+          <Button variant="primary" onClick={handleBuyNow}>
             Buy Now!
           </Button>
         </Modal.Footer>

@@ -9,7 +9,6 @@ const CartWishItems = ( {product, RemoveProduct, addProduct}) => {
   }
   return (
     <>
-    <>
       <Card className="ContainterCard d-flex flex-row">
         <Card.Img className="imgCard"style={{ width: "16rem"}} src={product.url} />
         <Card.Body className="">
@@ -17,13 +16,16 @@ const CartWishItems = ( {product, RemoveProduct, addProduct}) => {
           <Card.Text>
             Price: {product.price * product.quantity} €<br />
           </Card.Text>
+            <div className='d-flex justify-content-center'>
             <Button variant="danger m-3" onClick={RemoveItem}>
-              Remove
+            🗑
             </Button>
+            </div>
+            <div className='d-flex justify-content-center'>
             <AddButton productData={product} addProduct={addProduct}/>
+            </div>
         </Card.Body>
       </Card>
-    </>
     </>
   )
 }

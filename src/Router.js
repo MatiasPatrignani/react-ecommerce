@@ -6,7 +6,6 @@ import Partnership from './Components/Partnership/Partnership';
 import Contact from './Components/Contact/Contact';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import LoginPage from './Components/LoginPage/LoginPage';
-
 import CheckoutPage from "./Components/CheckoutPage/CheckoutPage";
 import Home from "./Components/Home/Home";
 import LayoutPayment from "./Components/LayoutPayment/LayoutPayment";

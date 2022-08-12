@@ -20,9 +20,11 @@ const CartProduct = ({ product, RemoveItem, myCart, setItems }) => {
           <div className="d-flex justify-content-around">
             <Counter product={product} myCart={myCart} setItems={setItems} />
           </div>
+          <div className=" d-flex justify-content-center">
             <Button variant="danger m-3" onClick={RemoveProduct}>
-              Remove
+            🗑
             </Button>
+          </div>
         </Card.Body>
       </Card>
     </>

@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.BackGroundImg{
+    background-image: url('../../../public/img/img_tankyoupage2.jpg');
+    width: 100%;
+    height: 100vh;
+}
+
+.backGroundMenu{
+    margin-top: 5rem;
+}
+
+.imageSuccess{
+    width: 10rem;
+}
